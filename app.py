@@ -32,7 +32,7 @@ def save_values_to_table(name, emotion, confidence):
 
 create_table()
 
-uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png", "webp"])
 
 emotions_emoji = {
     "angry": "😠",
