@@ -37,7 +37,7 @@ The application can detect 7 different emotions:
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/vic1500/image-emotion-project.git
 cd image-emotion-project
 ```
 2. Install the required dependencies:
