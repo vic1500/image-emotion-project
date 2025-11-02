@@ -1,5 +1,7 @@
+import cv2
 from transformers import ViTImageProcessor, ViTForImageClassification
 from PIL import Image
+import numpy as np
 import torch
 import streamlit as st
 
@@ -11,7 +13,15 @@ def load_model(model_path):
 
 
 def predict_emotion(img, model, processor):
-    image = Image.open(img)
+    if isinstance(img, np.ndarray):
+        image = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+    # If img is a file path (string)
+    elif isinstance(img, str):
+        image = Image.open(img)
+    # If img is a file-like object (e.g., UploadedFile)
+    else:
+        image = Image.open(img)
+
     inputs = processor(image, return_tensors="pt")
 
     with torch.no_grad():
