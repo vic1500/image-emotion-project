@@ -1,1 +1,1 @@
-https://image-emotion-detection-app.streamlit.app/
+https://image-emotion-detection-app.onrender.com
